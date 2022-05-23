@@ -1,0 +1,28 @@
+#ana创建虚拟环境
+conda create -n MaskRCNN python=3.6  //创建环境
+conda activate MaskCNN  //激活环境
+#升级pip
+python -m ensurepip
+python -m pip install --upgrade pip
+#添加清华园路径
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+#具体需要安装的包
+pip install numpy==1.17.0
+pip install scipy==1.2.1
+pip install Pillow==8.4.0
+pip install cython==0.29.28
+pip install matplotlib==3.3.4
+#一定要0.16.2，不然训练时会出现warning
+pip install scikit-image==0.16.2
+pip install keras==2.1.6
+pip install opencv-python
+pip install h5py==2.10.0
+pip install imgaug==0.4.0
+pip install ipython==7.16.3
+#安装gpu与相应的cuda
+pip install tensorflow-gpu==1.14.0
+conda search cudnn
+conda install cudatoolkit=10.0.130
+#根据搜索结果调整
+conda install cudnn=7.6.5=cuda10.0_0
